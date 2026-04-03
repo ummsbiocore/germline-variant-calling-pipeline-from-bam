@@ -67,7 +67,7 @@ input:
 output:
  path "genomeDict"  ,emit:g_55_genomeDict01_g_4 
 
-container 'quay.io/viascientific/gatk:1.0.0'
+container 'quay.io/ummsbiocore/gatk:1.0.0'
 stageInMode 'copy'
 
 script:
@@ -106,7 +106,7 @@ output:
  path "${name}_insert_size_histogram.pdf" ,optional:true  ,emit:g_4_outputFilePdf22 
  path "${name}_depth_out.txt"  ,emit:g_4_txtFile33 
 
-container 'quay.io/viascientific/variant_calling:1.0'
+container 'quay.io/ummsbiocore/variant_calling:1.0'
 
 errorStrategy 'retry'
 maxRetries 1
@@ -150,7 +150,7 @@ input:
 output:
  tuple val(name), val(round), file("${input_bam}"), file("${name}_raw_variants_${round}.vcf")  ,emit:g_56_VCFset00_g_8 
 
-container 'quay.io/viascientific/gatk:1.0.0'
+container 'quay.io/ummsbiocore/gatk:1.0.0'
 
 script:
 
@@ -354,7 +354,7 @@ input:
 output:
  path "${name}_recalibration_plots.pdf"  ,emit:g_17_outputFilePdf00 
 
-container 'quay.io/viascientific/variant_calling:1.0'
+container 'quay.io/ummsbiocore/variant_calling:1.0'
 
 errorStrategy 'retry'
 maxRetries 1
@@ -390,7 +390,7 @@ input:
 output:
  tuple val(name), val(round), file("${input_bam}"), file("${name}_raw_variants_${round}.vcf")  ,emit:g_57_VCFset00_g_22 
 
-container 'quay.io/viascientific/gatk:1.0.0'
+container 'quay.io/ummsbiocore/gatk:1.0.0'
 
 script:
 
